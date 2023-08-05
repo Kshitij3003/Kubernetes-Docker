@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: game-2048
+  name: service-2048
+spec:
+  type: NodePort
+  ports:
+    - port: 8085
+      targetPort: 80
+      nodePort: 30152
+  selector:
+    app.kubernetes.io/name: app-2048
